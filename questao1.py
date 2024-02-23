@@ -6,5 +6,6 @@ conexao = sqlite3.connect('banco')
 cursor = conexao.cursor()
 
 cursor.execute('CREATE TABLE alunos(id INT, nome VARCHAR(100), idade INT, curso VARCHAR(100));')
+
 conexao.commit()
 conexao.close

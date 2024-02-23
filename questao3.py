@@ -14,22 +14,24 @@ conexao = sqlite3.connect('banco')
 cursor = conexao.cursor()
 
 #A
-# dados = cursor.execute('SELECT * FROM alunos')
-# for alunos in dados:
-# 	print(alunos)
+dados = cursor.execute('SELECT * FROM alunos')
+for alunos in dados:
+	print(alunos)
 
 #B
-# maior20 = cursor.execute('SELECT nome,idade FROM alunos WHERE idade>20')
-# for alunos in maior20:
-# 	print(alunos)
+maior20 = cursor.execute('SELECT nome,idade FROM alunos WHERE idade>20')
+for alunos in maior20:
+	print(alunos)
 
 #C
-# engenhariaASC = cursor.execute('SELECT * FROM alunos WHERE curso="Engenharia" ORDER BY nome ASC')
-# for alunos in engenhariaASC:
-# 	print(alunos)
+engenhariaASC = cursor.execute('SELECT * FROM alunos WHERE curso="Engenharia" ORDER BY nome ASC')
+for alunos in engenhariaASC:
+	print(alunos)
 
 #D
-
+totalAlunos = cursor.execute('SELECT COUNT(*) FROM alunos')
+for alunos in totalAlunos:
+	print(alunos)
 
 conexao.commit()
 conexao.close
